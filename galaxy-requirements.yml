@@ -3,5 +3,5 @@
 # - src: https://github.com/iesplin/ansible-role-covenant.git
 # - src: https://github.com/iesplin/ansible-role-ghidra.git
 # - src: https://github.com/iesplin/ansible-role-keystone-engine.git
-- src: https://github.com/iesplin/ansible-role-vscode.git
-- src: gantsign.oh-my-zsh
+# - src: https://github.com/iesplin/ansible-role-vscode.git
+# - src: gantsign.oh-my-zsh

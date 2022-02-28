@@ -18,10 +18,20 @@
     - name: Clone git repositories
       git:
         repo: "{{ item.repo }}"
-        dest: "/opt/{{ item.name }}-git"
+        dest: "/home/djt/tools/{{ item.name }}-ansible"
         version: "{{ item.version | default('master') }}"
         force: true
       loop: "{{ git_repos | flatten(levels=1) }}"
+
+    ### Clone projects from git repos ###
+    # Various projects that are either not in Kali or are updated more frequently than Kali repos
+    - name: Clone git repositories for bug bounty
+      git:
+        repo: "{{ item.repo }}"
+        dest: "/home/djt/tools/bb/{{ item.name }}-ansible"
+        version: "{{ item.version | default('master') }}"
+        force: true
+      loop: "{{ git_repos_bb | flatten(levels=1) }}"
 
     ### Miscellaneous tools ###
     - name: Ensure destination directory exists
@@ -32,7 +42,7 @@
         group: root
         mode: 0755
       loop: "{{ misc_downloads }}"
-            
+
     - name: Download files
       get_url:
         url: "{{ item.url }}"
@@ -57,11 +67,11 @@
 
     - name: Install Sublime-text packages
       apt:
-        pkg: 
+        pkg:
           - sublime-text
           - sublime-merge
         state: present
-    
+
     ### Typora ###
     - name: Add Typora apt key
       apt_key:
@@ -79,7 +89,7 @@
       apt:
         name: typora
         state: present
-    
+
     ### CyberChef ###
     - name: Creates cyberchef directory
       file:
@@ -102,5 +112,3 @@
         owner: root
         group: root
         state: link
-
-

@@ -131,7 +131,7 @@
       register: firefox_profile
 
     - name: Create FireFox default profile
-      command: "firefox-esr -CreateProfile \"dts {{ firefox_default_profile_dir }}\""
+      command: "firefox-esr -CreateProfile \"djt {{ firefox_default_profile_dir }}\""
       when: not firefox_profile.stat.exists
 
     - name: Copy Firefox desktop file

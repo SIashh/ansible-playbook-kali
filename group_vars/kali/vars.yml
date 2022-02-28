@@ -16,7 +16,7 @@ gnome_settings:
   - { schema: "org.gnome.desktop.interface", path: "clock-show-date", key: "true" }
   - { schema: "org.gnome.desktop.screensaver", path: "picture-uri", key: "'file:///usr/share/backgrounds/kali/kali-light.xml'" }
   - { schema: "org.gnome.desktop.screensaver", path: "picture-options", key: "'zoom'" }
-## Power  
+## Power
   - { schema: "org.gnome.desktop.session", path: "idle-delay", key: "1800" }
   - { schema: "org.gnome.settings-daemon.plugins.power", path: "sleep-inactive-ac-type", key: "'nothing'" }
   - { schema: "org.gnome.settings-daemon.plugins.power", path: "sleep-inactive-battery-type", key: "'suspend'" }
@@ -31,8 +31,8 @@ gnome_settings:
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "background-opacity", key: "1.0" } #0.34999999999999998
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "click-action", key: "'previews'" } # 'cycle-windows'
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "custom-background-color", key: "true" } # false
-  - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "dash-max-icon-size", key: "40" } # 48 
-  - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "dock-fixed", key: "true" } 
+  - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "dash-max-icon-size", key: "40" } # 48
+  - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "dock-fixed", key: "true" }
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "dock-position", key: "'LEFT'" } #'RIGHT'
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "extend-height", key: "true" }
   - { schema: "org.gnome.shell.extensions.dash-to-dock", path: "force-straight-corner", key: "true" } # false
@@ -55,7 +55,7 @@ gnome_terminal_settings:
 # XFCE settings
 xfce_settings:
   - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/blank-on-ac", type: "int", value: "30" }
-  - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/dpms-enabled", type: "bool", value: "true" }  
+  - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/dpms-enabled", type: "bool", value: "true" }
   - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/dpms-on-ac-off", type: "int", value: "0" }
   - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/dpms-on-ac-sleep", type: "int", value: "0" }
   - { channel: "xfce4-power-manager", property: "/xfce4-power-manager/general-notification", type: "bool", value: "false" }
@@ -68,40 +68,37 @@ xfce_settings:
   - { channel: "xfwm4", property: "/general/vblank_mode", type: "string", value: "xpresent" }
   - { channel: "xfwm4", property: "/general/workspace_count", type: "int", value: "4" }
 
-# Git repositories to clone to /opt
+# Git repositories to clone to ~/tools
 git_repos:
   - name: fuzzdb
     repo: https://github.com/fuzzdb-project/fuzzdb.git
-  - name: gitTools
-    repo: https://github.com/internetwache/GitTools.git
   - name: goddi
     repo: https://github.com/NetSPI/goddi.git
-  - name: inveigh
-    repo: https://github.com/Kevin-Robertson/Inveigh.git
   - name: MS17-010
     repo: https://github.com/worawit/MS17-010.git
   - name: oneRuleToRuleThemAll
-    repo: https://github.com/NotSoSecure/password_cracking_rules.git
-  - name: p0wnyShell
-    repo: https://github.com/flozz/p0wny-shell.git  
   - name: payloadsAllTheThings
     repo: https://github.com/swisskyrepo/PayloadsAllTheThings.git
   - name: powerSploit
     repo: https://github.com/PowerShellMafia/PowerSploit.git
     version: dev
-  - name: privilege-escalation-awesome-scripts-suite
-    repo: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
-  - name: quieter-firefox
-    repo: https://bitbucket.org/mrbbking/quieter-firefox.git
-  - name: secLists
-    repo: https://github.com/danielmiessler/SecLists.git
   - name: dirsearch
     repo: https://github.com/maurosoria/dirsearch.git
   - name: testssl
     repo: https://github.com/drwetter/testssl.sh.git
     version: 3.1dev
-  - name: privexchange
-    repo: https://github.com/dirkjanm/PrivExchange.git
+  - name: graphqlmap
+    repo: https://github.com/swisskyrepo/GraphQL
+
+# Git repositories for bug bounty
+git_repos_bb:
+  - name: massdns
+    repo: https://github.com/blechschmidt/massdns.git
+  - name: dnsrecon
+    repo: https://github.com/darkoperator/dnsrecon.git
+  - name: sublist3r
+    repo: https://github.com/aboul3la/Sublist3r.git
+
 
 # Packages for OS
 kali_os_packages:
@@ -217,11 +214,14 @@ kali_tool_packages:
 
 python_pip_packages:
   - scapy
+  - py-altdns==1.0.2
+  - bloodhound
+
 
 ruby_gem_packages:
   - evil-winrm
 
-kali_user: dts
+kali_user: djt
 
 misc_downloads:
   - url: https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64

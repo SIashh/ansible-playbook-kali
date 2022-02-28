@@ -15,13 +15,13 @@
         name: wireshark
         question: wireshark-common/install-setuid
         value: 'true'
-        vtype: boolean 
+        vtype: boolean
 
     - name: Install OS packages
       apt:
         name: "{{ kali_os_packages }}"
         state: present
-    
+
     - name: Install tool packages
       apt:
         name: "{{ kali_tool_packages }}"
@@ -37,12 +37,12 @@
       apt:
         autoclean: true
 
-    # - name: Install Python Pip Packages
-    #   pip:
-    #     name: "{{ item }}"
-    #     state: latest
-    #     executable: pip3
-    #   loop: "{{ python_pip_packages }}"
+    - name: Install Python Pip Packages
+       pip:
+         name: "{{ item }}"
+         state: latest
+         executable: pip3
+       loop: "{{ python_pip_packages }}"
 
     - name: Install Ruby gems
       gem:
