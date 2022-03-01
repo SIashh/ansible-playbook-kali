@@ -18,13 +18,11 @@
     - name: Clone git repositories
       git:
         repo: "{{ item.repo }}"
-        dest: "/home/djt/tools/{{ item.name }}-ansible"
+        dest: "/home/djt/tools/ti/{{ item.name }}-ansible"
         version: "{{ item.version | default('master') }}"
         force: true
       loop: "{{ git_repos | flatten(levels=1) }}"
 
-    ### Clone projects from git repos ###
-    # Various projects that are either not in Kali or are updated more frequently than Kali repos
     - name: Clone git repositories for bug bounty
       git:
         repo: "{{ item.repo }}"
@@ -33,24 +31,20 @@
         force: true
       loop: "{{ git_repos_bb | flatten(levels=1) }}"
 
-    ### Miscellaneous tools ###
-    - name: Ensure destination directory exists
-      file:
-        dest: "{{ item.dest | dirname }}"
-        state: directory
-        owner: root
-        group: root
-        mode: 0755
-      loop: "{{ misc_downloads }}"
+    - name: Clone my own git repositories
+      git:
+        repo: "{{ item.repo }}"
+        dest: "/home/djt/tools/{{ item.name }}-ansible"
+        version: "{{ item.version | default('master') }}"
+        force: true
+      loop: "{{ git_repos_own | flatten(levels=1) }}"
 
-    - name: Download files
-      get_url:
-        url: "{{ item.url }}"
-        dest: "{{ item.dest }}"
-        owner: root
-        group: root
-        mode: "{{ item.mode | default(0644) }}"
-      loop: "{{ misc_downloads }}"
+    ### Download golang repos
+    - name: Go get modules
+      repo: "{{ item.repo }}"
+      shell: go get -u "{{ item.repo }}"
+      loop: "{{ go_repos | flatten(levels=1) }}"
+
 
     ### Sublime-Text ###
     - name: Add Sublime-text apt key
