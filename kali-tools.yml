@@ -6,12 +6,6 @@
   become: true
   vars_files:
     - config.yml
-  roles:
-    - ansible-role-burpsuite
-  #  - ansible-role-covenant
-  #  - ansible-role-ghidra
-  #  - ansible-role-keystone-engine
-  #  - ansible-role-vscode
   tasks:
     ### Clone projects from git repos ###
     # Various projects that are either not in Kali or are updated more frequently than Kali repos
@@ -41,7 +35,6 @@
 
     ### Download golang repos
     - name: Go get modules
-      repo: "{{ item.repo }}"
       shell: go get -u "{{ item.repo }}"
       loop: "{{ go_repos | flatten(levels=1) }}"
 
