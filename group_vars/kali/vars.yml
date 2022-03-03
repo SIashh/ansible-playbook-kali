@@ -77,6 +77,7 @@ git_repos:
   - name: MS17-010
     repo: https://github.com/worawit/MS17-010.git
   - name: oneRuleToRuleThemAll
+    repo: https://github.com/NotSoSecure/password_cracking_rules.git
   - name: payloadsAllTheThings
     repo: https://github.com/swisskyrepo/PayloadsAllTheThings.git
   - name: powerSploit
