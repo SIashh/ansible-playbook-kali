@@ -143,7 +143,7 @@ kali_os_packages:
   - docker-compose
   - docker.io
   - dpkg-dev
-  - free2rdp-x11
+  - freerdp2-x11
   - g++
   - gcc
   - gcc
@@ -156,7 +156,7 @@ kali_os_packages:
   - gufw
   - htop
   - jq
-  - keepass2
+  - keepassxc
   - libc6
   - libc6-dev
   - libffi-dev
@@ -175,7 +175,7 @@ kali_os_packages:
   - php
   - php-cli
   - php-curl
-  - python-dev
+  - python3-dev
   - remmina
   - tmux
   - ufw
