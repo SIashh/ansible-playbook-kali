@@ -35,8 +35,8 @@
 
     ### Download golang repos
     - name: Go get modules
-      shell: go get -u "{{ item.repo }}"
-      loop: "{{ go_repos | flatten(levels=1) }}"
+      shell: go install "{{ item.repo }}@latest"
+      loop: "{{ go_repos" }}
 
 
     ### Sublime-Text ###
