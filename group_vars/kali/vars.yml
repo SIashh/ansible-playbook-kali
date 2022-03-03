@@ -88,7 +88,7 @@ git_repos:
     repo: https://github.com/drwetter/testssl.sh.git
     version: 3.1dev
   - name: graphqlmap
-    repo: https://github.com/swisskyrepo/GraphQL
+    repo: https://github.com/swisskyrepo/GraphQLmap.git
 
 # Git repositories for bug bounty
 git_repos_bb:
@@ -121,11 +121,11 @@ go_repos:
   - name: github-subdomains
     repo: github.com/gwen001/github-subdomains
   - name: hakrawler
-    repo: github.com/hakluke/hakrawler@latest
+    repo: github.com/hakluke/hakrawler
   - name: httprobe
     repo: github.com/tomnomnom/httprobe
   - name: subfinder
-    repo: github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+    repo: github.com/projectdiscovery/subfinder/v2/cmd/subfinder
   - name: subjack
     repo: github.com/haccer/subjack
 
