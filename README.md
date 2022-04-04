@@ -14,6 +14,18 @@ git clone https://github.com/iesplin/ansible-playbook-kali
 cd ansible-playbook-kali
 ./deploy.sh
 ```
+4. Add go repos
+```bash
+go install github.com/ropnop/kerbrute@latest
+go install github.com/jaeles-project/gospider@latest
+go install github.com/tomnomnom/assetfinder@latest
+go install github.com/evilsocket/dnssearch@latest
+go install github.com/gwen001/github-subdomains@latest
+go install github.com/hakluke/hakrawler@latest
+go install github.com/tomnomnom/httprobe@latest
+go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install github.com/haccer/subjack@latest
+```
 
 License
 -------
