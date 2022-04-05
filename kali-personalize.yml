@@ -25,7 +25,7 @@
       become: true
       become_user: root
       file:
-        path: "/opt"
+        path: "/home/djt/tools"
         state: directory
         recurse: yes
         owner: "{{ kali_user }}"
