@@ -109,26 +109,6 @@ git_repos_own:
   - name: payloads
     repo: https://github.com/SIashh/img_payloads
 
-# Golang repositories
-go_repos:
-  - name: kerbrute
-    repo: github.com/ropnop/kerbrute
-  - name: gospider
-    repo: github.com/jaeles-project/gospider
-  - name: assetfinder
-    repo: github.com/tomnomnom/assetfinder
-  - name: dnssearch
-    repo: github.com/evilsocket/dnssearch
-  - name: github-subdomains
-    repo: github.com/gwen001/github-subdomains
-  - name: hakrawler
-    repo: github.com/hakluke/hakrawler
-  - name: httprobe
-    repo: github.com/tomnomnom/httprobe
-  - name: subfinder
-    repo: github.com/projectdiscovery/subfinder/v2/cmd/subfinder
-  - name: subjack
-    repo: github.com/haccer/subjack
 
 # Packages for OS
 kali_os_packages:
