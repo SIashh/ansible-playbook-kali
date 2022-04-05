@@ -33,11 +33,6 @@
         force: true
       loop: "{{ git_repos_own | flatten(levels=1) }}"
 
-    ### Download golang repos
-    - name: Go get modules
-      shell: go install "{{ item.repo }}@latest"
-      loop: "{{ go_repos }}"
-
 
     ### Sublime-Text ###
     - name: Add Sublime-text apt key
