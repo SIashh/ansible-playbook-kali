@@ -150,8 +150,7 @@ kali_os_packages:
   - network-manager-pptp
   - network-manager-vpnc
   - nextcloud-desktop
-  - ntp
-  - ntpdate
+  - ntpsec-ntpdate
   - openconnect
   - php
   - php-cli
